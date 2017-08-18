@@ -77,3 +77,32 @@ function Persona(){
 var person = new Persona();
 
 identificarTipo(person);
+
+
+/*ARGUMENTS: Todas las funciones en javascript crean un atributo "arguments" en tiempo de ejecucion
+el cual consiste en un arreglo que almacena los argumentos con los que se invoca la funcion*/
+
+function funcionUno(a,b,c){
+
+    if(arguments.length !== 3){
+        alert("La funcion necesita 3 parametros")
+    }
+    console.log( a + b + c);
+}
+
+funcionUno(1,2,3);
+
+/*CASO CONTRARIO: Aca la funcion mostrara un mensaje de alerta diciendo que se necesitan
+la cantidad de parametros que requiere la funcion, debido a que al momento de invocarla
+se estan pasando menos parametros de los que requiere*/
+
+function funcionDos(a,b,c){
+
+    if(arguments.length !== 3){
+        alert("La funcion necesita 3 parametros")
+        return; //<- aca debe ir un return para que retorne solo el mensaje y no el valor de la suma
+    }
+    console.log( a + b + c);
+}
+
+funcionDos(1,2,3,4,5);
